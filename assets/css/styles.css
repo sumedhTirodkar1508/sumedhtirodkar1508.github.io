@@ -1679,8 +1679,34 @@ html[data-kit-photo='0'] .emblem {
   max-width: 880px;
 }
 
+/* a column left on its own is a full section, so its head matches every other section head */
 .credentials.is-single .col-head {
-  justify-content: center;
+  display: block;
+  max-width: 760px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.credentials.is-single .col-icon {
+  display: none;
+}
+
+.credentials.is-single .col-index {
+  font-size: 1.125rem;
+}
+
+.credentials.is-single .col-index::before {
+  content: '';
+  width: 44px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(54, 212, 190, 0.7));
+}
+
+.credentials.is-single .col-title {
+  margin-top: 14px;
+  font-size: clamp(2.15rem, 3.4vw, 3.05rem);
+  line-height: 1.14;
+  letter-spacing: -0.01em;
 }
 
 .col-head {
