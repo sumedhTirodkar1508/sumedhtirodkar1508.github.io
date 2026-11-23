@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
 <title>PN-01 NeuroPanel system schematic</title>
-<desc>Chrome side panel captures tab audio in 30 s chunks and posts them with a Bearer JWT to the Next.js /api/transcribe route, which calls Gemini and appends text to a Transcript row in Postgres via Prisma. The web app uses NextAuth sessions.</desc>
+<desc>The Chrome side panel captures tab audio in 30 s chunks and posts each one with a Bearer JWT to the Next.js /api/transcribe route. The route sends the audio to Gemini, retrying 5xx errors, falls back to Deepgram once if Gemini fails, and appends the text to a Transcript row in Postgres via Prisma. A Gemini 429 goes back to the extension with retryAfter so it can back off. Health probes check the app and the database, and the web app reads transcripts with a NextAuth session.</desc>
 <defs>
-<style>text{font-family:'IBM Plex Mono',SFMono-Regular,Consolas,monospace;font-size:9px;letter-spacing:0.06em;fill:#ffffff}.h{font-size:10px}.k{fill:#36d4be;font-size:11px;font-weight:bold}.m{fill-opacity:0.7}</style>
+<style>text{font-family:'IBM Plex Mono',SFMono-Regular,Consolas,monospace;font-size:9px;letter-spacing:0.06em;fill:#ffffff}.h{font-size:10px}.k{fill:#36d4be;font-size:11px;font-weight:bold}.m{fill-opacity:0.7}.s{font-size:8px;fill-opacity:0.7}</style>
 <pattern id="g16" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#ffffff" stroke-opacity="0.05"/></pattern>
 <pattern id="g80" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#ffffff" stroke-opacity="0.09"/></pattern>
 <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#36d4be"/></marker>
@@ -15,51 +15,86 @@
 <rect x="0" y="0" width="640" height="26" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.4"/>
 <text x="16" y="17" class="h">PN-01 · NEUROPANEL · CHROME TAB AUDIO → TRANSCRIPT</text>
 
-<rect x="16" y="80" width="150" height="80" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
-<text x="28" y="100" class="h">CHROME EXTENSION</text>
-<text x="28" y="116" class="m">tabCapture</text>
-<text x="28" y="132" class="m">SIDE PANEL · 30 S</text>
+<!-- client -->
+<rect x="16" y="56" width="150" height="90" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
+<text x="28" y="76" class="h">CHROME EXTENSION</text>
+<text x="28" y="92" class="m">tabCapture · side panel</text>
+<text x="28" y="106" class="m">MediaRecorder · 30 S</text>
+<text x="28" y="120" class="m">~3 S overlap · prevTail</text>
+<text x="28" y="134" class="m">backs off on 429</text>
 
-<rect x="236" y="80" width="160" height="80" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
-<text x="248" y="100" class="h">NEXT.JS ROUTE</text>
-<text x="248" y="116">/api/transcribe</text>
-<text x="248" y="132" class="m">verify JWT</text>
-<text x="248" y="146" class="m">retry 5XX · 429</text>
+<!-- server -->
+<rect x="236" y="56" width="160" height="90" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
+<text x="248" y="76" class="h">NEXT.JS ROUTE</text>
+<text x="248" y="92">/api/transcribe</text>
+<text x="248" y="106" class="m">verify JWT</text>
+<text x="248" y="120" class="m">retry 5XX · 2 tries</text>
+<text x="248" y="134" class="m">de-dup overlap</text>
 
-<rect x="436" y="90" width="188" height="60" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
-<text x="448" y="110" class="h">GOOGLE GEMINI</text>
-<text x="448" y="126" class="m">gemini-2.5-flash</text>
-<text x="448" y="140" class="m">inline ≤20 MB · Files API</text>
+<!-- providers -->
+<rect x="456" y="40" width="168" height="58" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
+<text x="468" y="58" class="h">GOOGLE GEMINI</text>
+<text x="468" y="74" class="m">gemini-2.5-flash</text>
+<text x="468" y="89" class="s">≤20 MB inline · Files API</text>
 
-<rect x="436" y="200" width="188" height="80" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
-<text x="448" y="220" class="h">POSTGRES · SUPABASE</text>
-<text x="448" y="236" class="m">Prisma → Transcript</text>
-<text x="448" y="250" class="m">contentJson.chunks[]</text>
+<rect x="456" y="108" width="168" height="40" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.5" stroke-dasharray="4 3"/>
+<text x="468" y="125" class="h">DEEPGRAM</text>
+<text x="468" y="140" class="m">fallback · once</text>
 
-<rect x="436" y="296" width="188" height="44" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
-<text x="448" y="312" class="h">WEB APP · NEXTAUTH</text>
-<text x="448" y="328" class="m">session cookie</text>
+<!-- storage -->
+<rect x="456" y="190" width="168" height="70" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
+<text x="468" y="210" class="h">POSTGRES · SUPABASE</text>
+<text x="468" y="226" class="m">Prisma → Transcript</text>
+<text x="468" y="240" class="m">contentJson.chunks[]</text>
 
-<rect x="236" y="262" width="160" height="44" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.4"/>
-<text x="248" y="278">RETRY + 429</text>
-<text x="248" y="294" class="m">retryAfterMs</text>
+<rect x="456" y="296" width="168" height="48" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
+<text x="468" y="315" class="h">WEB APP · NEXTAUTH</text>
+<text x="468" y="331" class="m">session cookie</text>
 
-<rect x="16" y="262" width="150" height="44" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.4"/>
-<text x="28" y="278">HEALTH PROBES</text>
-<text x="28" y="294" class="m">live · ready</text>
+<rect x="236" y="214" width="160" height="48" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.4"/>
+<text x="248" y="233" class="h">HEALTH PROBES</text>
+<text x="248" y="249" class="m">/api/live · /api/health</text>
 
-<rect x="16" y="200" width="70" height="40" fill="none" stroke="#36d4be" stroke-opacity="0.8"/>
-<text x="24" y="217" class="k">30 S</text>
-<text x="24" y="231" class="m">CHUNK</text>
-<rect x="96" y="200" width="70" height="40" fill="none" stroke="#36d4be" stroke-opacity="0.8"/>
-<text x="104" y="217" class="k">95%+</text>
-<text x="104" y="231" class="m">RELIABLE</text>
+<!-- figures -->
+<rect x="16" y="190" width="70" height="40" fill="none" stroke="#36d4be" stroke-opacity="0.8"/>
+<text x="24" y="207" class="k">30 S</text>
+<text x="24" y="221" class="m">CHUNK</text>
+<rect x="96" y="190" width="70" height="40" fill="none" stroke="#36d4be" stroke-opacity="0.8"/>
+<text x="104" y="207" class="k">95%+</text>
+<text x="104" y="221" class="m">RELIABLE</text>
 
-<path d="M166 120H234" fill="none" stroke="#36d4be" stroke-width="1" marker-end="url(#ah)"/>
-<text x="176" y="110" class="m">JWT</text>
-<path d="M396 120H434" fill="none" stroke="#36d4be" stroke-width="1" marker-end="url(#ah)"/>
-<text x="402" y="112" class="m">TEXT</text>
-<path d="M396 150H416V240H434" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" marker-end="url(#aw)"/>
-<text x="320" y="190" class="m">APPEND CHUNK</text>
-<path d="M530 296V282" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" marker-end="url(#aw)"/>
+<!-- legend -->
+<path d="M16 300H40" fill="none" stroke="#36d4be" stroke-width="1" marker-end="url(#ah)"/>
+<text x="48" y="303" class="s">REQUEST PATH</text>
+<path d="M16 318H40" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#aw)"/>
+<text x="48" y="321" class="s">REPLY · FALLBACK · PROBE</text>
+
+<!-- extension ⇄ route -->
+<path d="M166 88H234" fill="none" stroke="#36d4be" stroke-width="1" marker-end="url(#ah)"/>
+<text x="172" y="82" class="s">AUDIO + JWT</text>
+<path d="M236 116H168" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#aw)"/>
+<text x="172" y="130" class="s">TEXT · 429</text>
+<text x="172" y="140" class="s">retryAfter</text>
+
+<!-- route ⇄ Gemini -->
+<path d="M396 64H454" fill="none" stroke="#36d4be" stroke-width="1" marker-end="url(#ah)"/>
+<text x="404" y="59" class="s">AUDIO</text>
+<path d="M456 80H398" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#aw)"/>
+<text x="404" y="92" class="s">TEXT</text>
+
+<!-- route → Deepgram fallback -->
+<path d="M396 128H454" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#aw)"/>
+<text x="402" y="123" class="s">ON ERROR</text>
+
+<!-- route → Postgres -->
+<path d="M316 146V176H520V188" fill="none" stroke="#36d4be" stroke-width="1" marker-end="url(#ah)"/>
+<text x="324" y="170" class="s">APPEND CHUNK</text>
+
+<!-- health → Postgres -->
+<path d="M396 238H454" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#aw)"/>
+<text x="404" y="233" class="s">SELECT 1</text>
+
+<!-- web app → Postgres -->
+<path d="M540 296V262" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" marker-end="url(#aw)"/>
+<text x="532" y="283" class="s" text-anchor="end">READ TRANSCRIPTS</text>
 </svg>
