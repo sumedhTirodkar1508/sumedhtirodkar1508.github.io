@@ -345,7 +345,9 @@
           if (a < 0.1) continue;
           opaque++;
           weight += a;
-          light += ((0.2126 * px[i] + 0.7152 * px[i + 1] + 0.0722 * px[i + 2]) / 255) * a;
+          // brightness, not luminance: a deep brand colour such as a navy disc still reads on the
+          // dark mount, and only a near-black mark needs the pale one
+          light += (Math.max(px[i], px[i + 1], px[i + 2]) / 255) * a;
         }
         const cover = opaque / (size * size);
         // a dark mark on a transparent ground needs the pale mount; a plate or a light mark does not
