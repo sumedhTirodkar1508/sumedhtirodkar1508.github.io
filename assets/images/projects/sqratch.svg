@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+  <title>PN-02 SQRATCH QR-to-reward system schematic</title>
+  <desc>Five-step core flow from QR scan to Shopify discount, four system parts, and four user roles.</desc>
+  <defs>
+    <style>text{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;font-size:9px;letter-spacing:0.06em;fill:#ffffff}.s{fill-opacity:0.7}.k{fill:#36d4be}.n{font-size:11px}</style>
+    <pattern id="minor" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0V16" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <pattern id="major" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#36d4be"/>
+    </marker>
+    <marker id="aw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#ffffff" fill-opacity="0.6"/>
+    </marker>
+  </defs>
+
+  <rect width="640" height="360" fill="#0f1418"/>
+  <rect width="640" height="360" fill="url(#minor)"/>
+  <rect width="640" height="360" fill="url(#major)"/>
+
+  <!-- title strip -->
+  <rect x="0" y="0" width="640" height="26" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="16" y="17">PN-02 · SQRATCH · QR-TO-REWARD SYSTEM SCHEMATIC</text>
+
+  <!-- 01 core flow -->
+  <text class="s" x="16" y="42">01 CORE FLOW</text>
+  <g stroke="#36d4be" stroke-opacity="0.8" stroke-width="1" fill="none">
+    <rect x="16" y="50" width="104" height="48"/>
+    <rect x="142" y="50" width="104" height="48"/>
+    <rect x="268" y="50" width="104" height="48"/>
+    <rect x="394" y="50" width="104" height="48"/>
+    <rect x="520" y="50" width="104" height="48"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="68" y="78">QR SCAN</text>
+    <text x="194" y="68">CAMPAIGN</text>
+    <text x="194" y="80">UNLOCK</text>
+    <text x="320" y="78">EXPERIENCE</text>
+    <text x="446" y="68">POINTS</text>
+    <text x="446" y="80">LEDGER</text>
+    <text x="572" y="68">SHOPIFY</text>
+    <text x="572" y="80">CODE</text>
+  </g>
+  <g stroke="#36d4be" stroke-width="1" marker-end="url(#ah)">
+    <line x1="122" y1="74" x2="140" y2="74"/>
+    <line x1="248" y1="74" x2="266" y2="74"/>
+    <line x1="374" y1="74" x2="392" y2="74"/>
+    <line x1="500" y1="74" x2="518" y2="74"/>
+  </g>
+
+  <!-- key readouts -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1">
+    <rect x="16" y="110" width="120" height="24"/>
+    <rect x="152" y="110" width="120" height="24"/>
+    <rect x="288" y="110" width="120" height="24"/>
+  </g>
+  <text class="k n" x="28" y="126">4</text>
+  <text class="s" x="44" y="126">ROLES</text>
+  <text class="k n" x="164" y="126">5</text>
+  <text class="s" x="180" y="126">FLOW STEPS</text>
+  <text class="k n" x="300" y="126">4</text>
+  <text class="s" x="316" y="126">SYSTEM PARTS</text>
+
+  <!-- 02 system parts -->
+  <text class="s" x="16" y="158">02 SYSTEM PARTS</text>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1">
+    <rect x="16" y="166" width="140" height="50"/>
+    <rect x="172" y="166" width="140" height="50"/>
+    <rect x="328" y="166" width="140" height="50"/>
+    <rect x="484" y="166" width="140" height="50"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="86" y="184">NEXT.JS APP</text>
+    <text class="s" x="86" y="198">App Router · API</text>
+    <text x="242" y="184">POSTGRES</text>
+    <text class="s" x="242" y="198">Prisma · Supabase</text>
+    <text x="398" y="184">SUPABASE STORAGE</text>
+    <text class="s" x="398" y="198">videos · assets</text>
+    <text x="554" y="184">SHOPIFY ADMIN</text>
+    <text class="s" x="554" y="198">GraphQL API</text>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" marker-end="url(#aw)">
+    <line x1="158" y1="191" x2="170" y2="191"/>
+    <line x1="314" y1="191" x2="326" y2="191"/>
+    <line x1="470" y1="191" x2="482" y2="191"/>
+  </g>
+
+  <!-- 03 user roles -->
+  <text class="s" x="16" y="240">03 USER ROLES</text>
+  <g stroke="#ffffff" stroke-opacity="0.4" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="86" y1="216" x2="86" y2="248"/>
+    <line x1="242" y1="216" x2="242" y2="248"/>
+    <line x1="398" y1="216" x2="398" y2="248"/>
+    <line x1="554" y1="216" x2="554" y2="248"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1">
+    <rect x="16" y="248" width="140" height="48"/>
+    <rect x="172" y="248" width="140" height="48"/>
+    <rect x="328" y="248" width="140" height="48"/>
+    <rect x="484" y="248" width="140" height="48"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="86" y="268">USER</text>
+    <text class="s" x="86" y="282">scan · play · earn</text>
+    <text x="242" y="268">CREATOR</text>
+    <text class="s" x="242" y="282">build experiences</text>
+    <text x="398" y="268">BRAND_ADMIN</text>
+    <text class="s" x="398" y="282">campaigns · Shopify</text>
+    <text x="554" y="268">ADMIN</text>
+    <text class="s" x="554" y="282">platform staff</text>
+  </g>
+
+  <!-- legend -->
+  <line x1="16" y1="318" x2="40" y2="318" stroke="#36d4be" stroke-width="1" marker-end="url(#ah)"/>
+  <text x="46" y="321">KEY PATH</text>
+  <line x1="130" y1="318" x2="154" y2="318" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="160" y="321">ACCESS</text>
+  <text class="s" x="240" y="321">POINTS: APPEND-ONLY LEDGER · CODE: LIVE VIA ADMIN API</text>
+</svg>

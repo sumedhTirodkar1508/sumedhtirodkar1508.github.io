@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+<title>PN-09 originbound: same relay, two relying parties</title>
+<desc>A victim passes values through a relay to a TOTP relying party (accepts) and a WebAuthn relying party (ORIGIN_MISMATCH on clientDataJSON.origin), with a numbered trace.</desc>
+<defs>
+<pattern id="minor" width="16" height="16" patternUnits="userSpaceOnUse">
+<path d="M16 0V16M0 16H16" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+</pattern>
+<pattern id="major" width="80" height="80" patternUnits="userSpaceOnUse">
+<path d="M80 0V80M0 80H80" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
+</pattern>
+<marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+<path d="M0,0 L8,4 L0,8 z" fill="#ffffff" fill-opacity="0.7"/>
+</marker>
+<marker id="arrA" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+<path d="M0,0 L8,4 L0,8 z" fill="#36d4be"/>
+</marker>
+</defs>
+<style>
+text{font-family:"IBM Plex Mono, SFMono-Regular, Consolas, monospace";letter-spacing:0.06em;text-transform:uppercase;fill:#ffffff}
+.s{font-size:9px}
+.m{font-size:9px;fill-opacity:0.7}
+.l{font-size:10px}
+.k{font-size:11px;fill:#36d4be}
+</style>
+<rect x="0" y="0" width="640" height="360" fill="#0f1418"/>
+<rect x="0" y="0" width="640" height="360" fill="url(#minor)"/>
+<rect x="0" y="0" width="640" height="360" fill="url(#major)"/>
+
+<rect x="16" y="16" width="608" height="28" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
+<text class="l" x="28" y="34">PN-09 · ORIGINBOUND · SAME RELAY, TWO RELYING PARTIES</text>
+
+<rect x="32" y="120" width="120" height="60" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1"/>
+<text class="l" x="44" y="140">VICTIM</text>
+<text class="m" x="44" y="156">TOTP APP /</text>
+<text class="m" x="44" y="168">VIRTUAL AUTH</text>
+
+<rect x="220" y="120" width="110" height="60" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1"/>
+<text class="l" x="232" y="140">RELAY</text>
+<text class="m" x="232" y="156">FORWARDS IN</text>
+<text class="m" x="232" y="168">REAL TIME</text>
+
+<line x1="152" y1="150" x2="220" y2="150" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" marker-end="url(#arr)"/>
+<text class="s" x="156" y="140">FORWARD</text>
+
+<path d="M330 140 L400 100" fill="none" stroke="#36d4be" stroke-width="1" marker-end="url(#arrA)"/>
+<path d="M330 160 L400 236" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+
+<rect x="400" y="64" width="208" height="72" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1"/>
+<text class="l" x="412" y="84">TOTP RELYING PARTY</text>
+<text class="m" x="412" y="102">VERIFY(CODE): NO ORIGIN INPUT</text>
+<text class="s" x="412" y="122">RESULT: <tspan class="k">ACCEPTED</tspan></text>
+
+<rect x="400" y="200" width="208" height="72" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1"/>
+<text class="l" x="412" y="220">WEBAUTHN RELYING PARTY</text>
+<text class="m" x="412" y="238">CHECKS CLIENTDATAJSON.ORIGIN</text>
+<text class="s" x="412" y="256">RESULT: <tspan fill-opacity="1">ORIGIN_MISMATCH</tspan></text>
+
+<rect x="32" y="200" width="120" height="30" fill="none" stroke="#36d4be" stroke-width="1"/>
+<text class="k" x="44" y="219">20 TESTS</text>
+<rect x="32" y="238" width="120" height="30" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+<text class="s" x="44" y="257">2 RELYING PARTIES</text>
+
+<rect x="16" y="280" width="608" height="64" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
+<text class="s" x="28" y="294">01 VICTIM SHOWS BANK.EXAMPLE.EVIL, ATTACKER FORWARDS VALUES</text>
+<text class="s" x="28" y="308" fill="#36d4be">02 TOTP: CODE CARRIES NO ORIGIN, REPLAY CHECK ONLY, ACCEPT</text>
+<text class="s" x="28" y="322">03 WEBAUTHN: DECIDING FIELD CLIENTDATAJSON.ORIGIN, REFUSES TO SIGN</text>
+<text class="s" x="28" y="336">04 CONTROL WITHOUT RELAY: ACCEPTED, VERIFIER IS NOT REJECTING ALL</text>
+</svg>

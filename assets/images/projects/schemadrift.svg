@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+<title>PN-05 schemadrift pipeline</title>
+<desc>Old and new SDL are parsed and diffed structurally. Usage records are reduced to a rolling 30-day window. An applyUsage downgrade rule feeds a PR report and a gate verdict. Readouts: 30d window, 0 callers for SAFE, 2 to 0 breaking in demo.</desc>
+<defs>
+<pattern id="minor" width="16" height="16" patternUnits="userSpaceOnUse">
+<path d="M16 0H0V16" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+</pattern>
+<pattern id="major" width="80" height="80" patternUnits="userSpaceOnUse">
+<path d="M80 0H0V80" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
+</pattern>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0 0L10 5L0 10z" fill="#ffffff" fill-opacity="0.7"/>
+</marker>
+<marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0 0L10 5L0 10z" fill="#36d4be"/>
+</marker>
+<style>
+.t{font-family:"IBM Plex Mono", SFMono-Regular, Consolas, monospace;font-size:9px;letter-spacing:0.06em;fill:#ffffff}
+.s{font-family:"IBM Plex Mono", SFMono-Regular, Consolas, monospace;font-size:9px;letter-spacing:0.06em;fill:#ffffff;fill-opacity:0.7}
+.a{font-family:"IBM Plex Mono", SFMono-Regular, Consolas, monospace;font-size:9px;letter-spacing:0.06em;fill:#36d4be}
+.n{font-family:"IBM Plex Mono", SFMono-Regular, Consolas, monospace;font-size:18px;fill:#36d4be}
+</style>
+</defs>
+<rect x="0" y="0" width="640" height="360" fill="#0f1418"/>
+<rect x="0" y="0" width="640" height="360" fill="url(#minor)"/>
+<rect x="0" y="0" width="640" height="360" fill="url(#major)"/>
+<rect x="0" y="0" width="640" height="28" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
+<text class="t" x="16" y="18">PN-05 · SCHEMADRIFT · STRUCTURAL DIFF + USAGE DOWNGRADE</text>
+
+<rect x="16" y="56" width="112" height="36" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+<text class="t" x="72" y="78" text-anchor="middle">OLD SDL</text>
+<rect x="16" y="116" width="112" height="36" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+<text class="t" x="72" y="138" text-anchor="middle">NEW SDL</text>
+<rect x="16" y="232" width="112" height="44" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+<text class="t" x="72" y="252" text-anchor="middle">USAGE RECORDS</text>
+<text class="s" x="72" y="266" text-anchor="middle">field · client · at</text>
+
+<rect x="168" y="56" width="136" height="60" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+<text class="t" x="236" y="84" text-anchor="middle">STRUCTURAL DIFF</text>
+<text class="s" x="236" y="102" text-anchor="middle">src/diff.ts</text>
+<rect x="168" y="232" width="136" height="44" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+<text class="t" x="236" y="252" text-anchor="middle">ROLLING WINDOW</text>
+<text class="s" x="236" y="266" text-anchor="middle">buildWindow · N days</text>
+
+<rect x="340" y="134" width="132" height="64" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+<text class="a" x="406" y="160" text-anchor="middle">APPLY USAGE</text>
+<text class="s" x="406" y="175" text-anchor="middle">NARROW DOWNGRADE</text>
+<text class="s" x="406" y="189" text-anchor="middle">DEPRECATED + 0 CALLS</text>
+
+<rect x="512" y="84" width="112" height="52" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+<text class="t" x="568" y="110" text-anchor="middle">RENDER REPORT</text>
+<text class="s" x="568" y="124" text-anchor="middle">PR comment (md)</text>
+<rect x="512" y="196" width="112" height="52" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+<text class="t" x="568" y="222" text-anchor="middle">WORST SEVERITY</text>
+<text class="s" x="568" y="236" text-anchor="middle">gate verdict</text>
+
+<path d="M128 74 L148 74 L148 90 L168 90" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" marker-end="url(#ah)"/>
+<path d="M128 134 L148 134 L148 110 L168 110" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" marker-end="url(#ah)"/>
+<path d="M128 254 L168 254" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" marker-end="url(#ah)"/>
+<path d="M304 86 L322 86 L322 150 L340 150" fill="none" stroke="#36d4be" stroke-width="1" marker-end="url(#ahc)"/>
+<path d="M304 254 L322 254 L322 182 L340 182" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" marker-end="url(#ah)"/>
+<path d="M472 150 L492 150 L492 110 L512 110" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" marker-end="url(#ah)"/>
+<path d="M472 182 L492 182 L492 222 L512 222" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" marker-end="url(#ah)"/>
+
+<rect x="16" y="296" width="192" height="40" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
+<text class="n" x="28" y="322">30d</text>
+<text class="t" x="100" y="318">ROLLING WINDOW</text>
+<text class="s" x="100" y="331">usage per field</text>
+<rect x="224" y="296" width="192" height="40" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
+<text class="n" x="236" y="322">0</text>
+<text class="t" x="260" y="318">CALLERS IN 30D</text>
+<text class="s" x="260" y="331">→ SAFE IF DEPRECATED</text>
+<rect x="432" y="296" width="192" height="40" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
+<text class="n" x="444" y="322">2→0</text>
+<text class="t" x="504" y="318">BREAKING, DEMO</text>
+<text class="s" x="504" y="331">structure vs usage</text>
+</svg>

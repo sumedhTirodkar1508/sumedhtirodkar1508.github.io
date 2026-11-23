@@ -1,0 +1,63 @@
+{
+  "roles": [
+    {
+      "company": "University of Maryland",
+      "logo": "assets/images/logos/university-of-maryland.png",
+      "title": "Research Assistant - Software Developer",
+      "start": "Aug 2024",
+      "end": "Present",
+      "location": "USA",
+      "description": "Builds full-stack features with Next.js, React, TypeScript, PostgreSQL and Supabase.",
+      "highlights": [
+        "Cut average API query execution time by 65% by redesigning relational schemas, adding indexes and refining complex queries in PostgreSQL and Supabase.",
+        "Reduced initial page load latency by 35% with Next.js, React and TypeScript features built on RESTful APIs and reusable components.",
+        "Protected more than 1 million user records with a secure multi-tenant design using PostgreSQL Row-Level Security, database functions and role-based access controls.",
+        "Reduced manual deployment effort by 40% and release time from 30 minutes to 4 minutes with GitHub Actions and AWS S3 workflows."
+      ],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Supabase",
+        "Row-Level Security",
+        "OAuth 2.0",
+        "JWT",
+        "AWS S3",
+        "CloudFront",
+        "GitHub Actions"
+      ],
+      "earlier": [
+        {
+          "title": "Teaching Assistant - Graduate Programming",
+          "start": "Aug 2023",
+          "end": "Dec 2024"
+        }
+      ]
+    },
+    {
+      "company": "Reliance Jio Platforms Limited",
+      "logo": "assets/images/logos/reliance-jio-platforms.svg",
+      "title": "Software Development Engineer",
+      "start": "Aug 2019",
+      "end": "Jul 2023",
+      "location": "India",
+      "description": "Backend engineer on enterprise compliance workflows and API platform infrastructure.",
+      "highlights": [
+        "Engineered Java, Spring Boot and MySQL backend components for Jio's Tax Filing Portal, serving 20,000+ users and cutting tax submission processing time by up to 70 minutes per user.",
+        "Provisioned and configured WSO2 API Gateway infrastructure, including server setup, network routing, dependencies and security certificate integration.",
+        "Coordinated API onboarding and gateway configuration across 5+ engineering teams, with OAuth/JWT authentication, rate limiting and deployment verification.",
+        "Reduced mean time to resolution by 30% by diagnosing defects and performance bottlenecks through log analysis and application monitoring."
+      ],
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "RESTful APIs",
+        "MySQL",
+        "WSO2 API Gateway",
+        "OAuth",
+        "JWT"
+      ]
+    }
+  ]
+}

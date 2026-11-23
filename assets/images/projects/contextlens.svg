@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <title>PN-08 ContextLens system schematic</title>
+  <desc>Hover and CodeLens providers read from a git blame parser and SQLite cache. A background indexer drives a rate-limit-aware GitHub client, and a comment-ranking heuristic feeds the cache.</desc>
+  <defs>
+    <pattern id="minor" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0V16" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <pattern id="major" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#ffffff" fill-opacity="0.7"/>
+    </marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#36d4be"/>
+    </marker>
+    <style>
+      text { font-family: "IBM Plex Mono, SFMono-Regular, Consolas, monospace"; letter-spacing: 0.06em; text-transform: uppercase; fill: #ffffff; }
+      .t { font-size: 10px; }
+      .s { font-size: 9px; fill-opacity: 0.7; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="640" height="360" fill="#0f1418"/>
+  <rect x="0" y="0" width="640" height="360" fill="url(#minor)"/>
+  <rect x="0" y="0" width="640" height="360" fill="url(#major)"/>
+
+  <!-- title strip -->
+  <rect x="0" y="0" width="640" height="28" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="16" y="18" font-size="10">PN-08 · CONTEXTLENS · HOVER / BLAME / PR CONTEXT</text>
+
+  <!-- arrows (white) -->
+  <path d="M156 143H186V96H216" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" marker-end="url(#a)"/>
+  <line x1="366" y1="270" x2="434" y2="270" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" marker-end="url(#a)"/>
+  <line x1="529" y1="250" x2="529" y2="196" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" marker-end="url(#a)"/>
+  <line x1="434" y1="174" x2="366" y2="174" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" marker-end="url(#a)"/>
+
+  <!-- key read path (accent) -->
+  <line x1="156" y1="83" x2="216" y2="83" stroke="#36d4be" stroke-width="1" marker-end="url(#b)"/>
+  <line x1="290" y1="104" x2="290" y2="152" stroke="#36d4be" stroke-width="1" marker-end="url(#b)"/>
+  <line x1="300" y1="152" x2="300" y2="104" stroke="#36d4be" stroke-width="1" marker-end="url(#b)"/>
+  <path d="M216 184H180V270H156" fill="none" stroke="#36d4be" stroke-width="1" marker-end="url(#b)"/>
+
+  <!-- editor column -->
+  <rect x="16" y="64" width="140" height="38" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+  <text x="26" y="80" class="t">Hover provider</text>
+  <text x="26" y="93" class="s">VS Code hover</text>
+
+  <rect x="16" y="124" width="140" height="38" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+  <text x="26" y="140" class="t">CodeLens provider</text>
+  <text x="26" y="153" class="s">above fn / class</text>
+
+  <rect x="16" y="250" width="140" height="40" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+  <text x="26" y="266" class="t">Hover card</text>
+  <text x="26" y="279" class="s">gutter UI</text>
+
+  <!-- local core -->
+  <rect x="216" y="64" width="150" height="40" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+  <text x="226" y="80" class="t">Git blame parser</text>
+  <text x="226" y="93" class="s">porcelain parser</text>
+
+  <rect x="216" y="152" width="150" height="44" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+  <text x="226" y="170" class="t">SQLite cache</text>
+  <text x="226" y="184" class="s">sql.js · PRs+comments</text>
+
+  <!-- background -->
+  <rect x="216" y="250" width="150" height="40" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+  <text x="226" y="266" class="t">Background indexer</text>
+  <text x="226" y="279" class="s">repo-open pass</text>
+
+  <!-- github sync -->
+  <rect x="434" y="250" width="190" height="40" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+  <text x="444" y="266" class="t">Rate-limit GitHub client</text>
+  <text x="444" y="279" class="s">Retry-After + backoff</text>
+
+  <rect x="434" y="152" width="190" height="44" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+  <text x="444" y="170" class="t">Comment-ranking heuristic</text>
+  <text x="444" y="184" class="s">explanatory comments first</text>
+
+  <!-- legend -->
+  <line x1="16" y1="330" x2="40" y2="330" stroke="#36d4be" stroke-width="1"/>
+  <text x="48" y="333" class="s">Accent path = offline read path (no network)</text>
+  <text x="16" y="348" class="s">Background sync writes to cache only</text>
+</svg>

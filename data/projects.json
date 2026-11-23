@@ -1,0 +1,244 @@
+{
+  "projects": [
+    {
+      "name": "NeuroPanel",
+      "category": "AI / Browser extension",
+      "description": "A Chrome extension and Next.js backend that captures tab audio in 30-second chunks and transcribes it with Google Gemini. Incremental transcripts are stored in PostgreSQL through Prisma, with secure auth for both the web app and the extension.",
+      "highlights": [
+        "Achieved over 95% transcription reliability with Gemini retry, fallback and error handling.",
+        "Extension authenticates with Bearer JWTs, while the web app uses NextAuth sessions.",
+        "Sends audio inline up to 20 MB and through the Gemini Files API for larger files."
+      ],
+      "technologies": [
+        "React",
+        "Vite",
+        "TypeScript",
+        "Next.js",
+        "PostgreSQL",
+        "Prisma"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/neuroPanel",
+        "demo": "https://neuro-panel.vercel.app"
+      },
+      "image": "assets/images/projects/neuropanel.svg",
+      "featured": true,
+      "hero": {
+        "src": "assets/images/projects/neuropanel-hero.jpg",
+        "alt": "NeuroPanel — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "SQRATCH",
+      "category": "Full-stack platform",
+      "description": "A loyalty and content platform where scratchable QR stickers on physical products unlock branded video and community experiences. Shoppers earn points and redeem them for single-use Shopify discount codes.",
+      "highlights": [
+        "Every point award, spend and refund goes through one atomic ledger function backed by an immutable transaction record.",
+        "Creates single-use discount codes live through the Shopify Admin GraphQL API against a brand's connected store.",
+        "Role-based access for customers, creators, brand admins and internal staff."
+      ],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Supabase"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/sqratch",
+        "demo": "https://sqratch.com/"
+      },
+      "image": "assets/images/projects/sqratch.svg",
+      "featured": true,
+      "hero": {
+        "src": "assets/images/projects/sqratch-hero.jpg",
+        "alt": "SQRATCH — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "WebMCP Forge",
+      "category": "Developer tools",
+      "description": "An open-source no-code studio that scans an existing portfolio and produces one script tag. Once installed, the site exposes real WebMCP tools such as list_projects and get_profile to browser agents.",
+      "highlights": [
+        "Bounded, SSRF-hardened server-side scanner that crawls up to 10 same-origin pages by default.",
+        "The runtime reads the live DOM and never calls Gemini or the builder during a tool invocation.",
+        "The builder registers its own WebMCP tools, so an agent can operate it."
+      ],
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Gemini API",
+        "Cheerio"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/webmcp-forge",
+        "demo": "https://webmcp-forge.vercel.app"
+      },
+      "image": "assets/images/projects/webmcp-forge.svg",
+      "featured": true,
+      "hero": {
+        "src": "assets/images/projects/webmcp-forge-hero.jpg",
+        "alt": "WebMCP Forge — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "onespec",
+      "category": "Validation / Data integrity",
+      "description": "One declarative spec drives a compiled client validator, an interpreted server validator and SQL CHECK constraints. A property-based parity suite proves all three accept and reject exactly the same rows.",
+      "highlights": [
+        "11 tests, including a 10,000-row three-way parity check.",
+        "A mutation test shows the parity check detects drift.",
+        "No dependencies and no build step; the SQL target runs against SQLite."
+      ],
+      "technologies": [
+        "TypeScript",
+        "Node.js",
+        "SQLite",
+        "SQL",
+        "Property-based testing"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/onespec"
+      },
+      "image": "assets/images/projects/onespec.svg",
+      "hero": {
+        "src": "assets/images/projects/onespec-hero.jpg",
+        "alt": "onespec — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "schemadrift",
+      "category": "API tooling",
+      "description": "A GraphQL breaking-change gate that downgrades severity using real field-usage telemetry. It names the client that still calls a removed field and posts the report as a pull request comment.",
+      "highlights": [
+        "Removing a deprecated field with zero calls in 30 days is downgraded to SAFE; a field still in use stays BREAKING.",
+        "Every downgrade is recorded on the finding with its justification.",
+        "A browser app runs the same logic."
+      ],
+      "technologies": [
+        "TypeScript",
+        "GraphQL",
+        "Node.js",
+        "GitHub Actions"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/schemadrift"
+      },
+      "image": "assets/images/projects/schemadrift.svg",
+      "hero": {
+        "src": "assets/images/projects/schemadrift-hero.jpg",
+        "alt": "schemadrift — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "dmarcwatch",
+      "category": "Monitoring / Analytics",
+      "description": "Email deliverability monitoring built from DMARC aggregate reports. It separates mail that never arrived from mail that arrived and was ignored, and flags unauthorised senders.",
+      "highlights": [
+        "Parses RUA XML from five provider dialects with a dependency-free reader.",
+        "On a seeded corpus, found the planted break day and traced a 100.0% to 15.0% DMARC pass-rate drop to SPF alignment.",
+        "Split a 24.0% to 3.6% open-rate drop into deliverability and engagement."
+      ],
+      "technologies": [
+        "TypeScript",
+        "Node.js",
+        "XML parsing"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/dmarcwatch"
+      },
+      "image": "assets/images/projects/dmarcwatch.svg",
+      "hero": {
+        "src": "assets/images/projects/dmarcwatch-hero.jpg",
+        "alt": "dmarcwatch — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "tokenforge",
+      "category": "Frontend tooling",
+      "description": "One design-token JSON source feeds a Tailwind theme, CSS custom properties for light, dark and high-contrast modes, and a typed TypeScript module. A WCAG contrast gate fails CI before a bad color pair ships.",
+      "highlights": [
+        "Validated with Zod, including cross-field reference checks.",
+        "check-contrast exits non-zero when a declared pair misses its WCAG level.",
+        "104-test Vitest suite; runs fully offline."
+      ],
+      "technologies": [
+        "TypeScript",
+        "Tailwind CSS",
+        "Zod",
+        "Vitest",
+        "CSS Variables",
+        "GitHub Actions"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/tokenforge"
+      },
+      "image": "assets/images/projects/tokenforge.svg",
+      "hero": {
+        "src": "assets/images/projects/tokenforge-hero.jpg",
+        "alt": "tokenforge — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "ContextLens",
+      "category": "Developer tools",
+      "description": "A VS Code extension that shows who wrote a line, why, and what the pull request discussion said. It blames the line, follows the commit to its PR and ranks the comments by how well they explain the change.",
+      "highlights": [
+        "Local SQLite cache (sql.js) makes repeat hovers instant and available offline.",
+        "Rate-limit-aware GitHub client with Retry-After and exponential backoff handling.",
+        "GitHub token is kept in VS Code SecretStorage, never in settings.json."
+      ],
+      "technologies": [
+        "TypeScript",
+        "VS Code API",
+        "SQLite",
+        "GitHub API",
+        "Vitest"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/contextlens"
+      },
+      "image": "assets/images/projects/contextlens.svg",
+      "hero": {
+        "src": "assets/images/projects/contextlens-hero.jpg",
+        "alt": "ContextLens — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "originbound",
+      "category": "Security",
+      "description": "A contained lab that runs the same real-time relay attack against TOTP and WebAuthn. It shows the attack succeed against one and fail against the other, and names the protocol field that decides the outcome.",
+      "highlights": [
+        "The relay succeeds against TOTP and fails with ORIGIN_MISMATCH against WebAuthn.",
+        "A control run with no relay proves the verifier is not simply rejecting everything.",
+        "20 tests plus a browser lab."
+      ],
+      "technologies": [
+        "TypeScript",
+        "WebAuthn",
+        "TOTP",
+        "Node.js"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/originbound"
+      },
+      "image": "assets/images/projects/originbound.svg",
+      "hero": {
+        "src": "assets/images/projects/originbound-hero.jpg",
+        "alt": "originbound — Concept render",
+        "caption": "Concept render"
+      }
+    }
+  ]
+}

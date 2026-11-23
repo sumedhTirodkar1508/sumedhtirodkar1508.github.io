@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+<title>PN-01 NeuroPanel system schematic</title>
+<desc>Chrome side panel captures tab audio in 30 s chunks and posts them with a Bearer JWT to the Next.js /api/transcribe route, which calls Gemini and appends text to a Transcript row in Postgres via Prisma. The web app uses NextAuth sessions.</desc>
+<defs>
+<style>text{font-family:'IBM Plex Mono',SFMono-Regular,Consolas,monospace;font-size:9px;letter-spacing:0.06em;fill:#ffffff}.h{font-size:10px}.k{fill:#36d4be;font-size:11px;font-weight:bold}.m{fill-opacity:0.7}</style>
+<pattern id="g16" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#ffffff" stroke-opacity="0.05"/></pattern>
+<pattern id="g80" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#ffffff" stroke-opacity="0.09"/></pattern>
+<marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#36d4be"/></marker>
+<marker id="aw" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#ffffff" fill-opacity="0.7"/></marker>
+</defs>
+<rect x="0" y="0" width="640" height="360" fill="#0f1418"/>
+<rect x="0" y="0" width="640" height="360" fill="url(#g16)"/>
+<rect x="0" y="0" width="640" height="360" fill="url(#g80)"/>
+
+<rect x="0" y="0" width="640" height="26" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.4"/>
+<text x="16" y="17" class="h">PN-01 · NEUROPANEL · CHROME TAB AUDIO → TRANSCRIPT</text>
+
+<rect x="16" y="80" width="150" height="80" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
+<text x="28" y="100" class="h">CHROME EXTENSION</text>
+<text x="28" y="116" class="m">tabCapture</text>
+<text x="28" y="132" class="m">SIDE PANEL · 30 S</text>
+
+<rect x="236" y="80" width="160" height="80" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
+<text x="248" y="100" class="h">NEXT.JS ROUTE</text>
+<text x="248" y="116">/api/transcribe</text>
+<text x="248" y="132" class="m">verify JWT</text>
+<text x="248" y="146" class="m">retry 5XX · 429</text>
+
+<rect x="436" y="90" width="188" height="60" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
+<text x="448" y="110" class="h">GOOGLE GEMINI</text>
+<text x="448" y="126" class="m">gemini-2.5-flash</text>
+<text x="448" y="140" class="m">inline ≤20 MB · Files API</text>
+
+<rect x="436" y="200" width="188" height="80" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
+<text x="448" y="220" class="h">POSTGRES · SUPABASE</text>
+<text x="448" y="236" class="m">Prisma → Transcript</text>
+<text x="448" y="250" class="m">contentJson.chunks[]</text>
+
+<rect x="436" y="296" width="188" height="44" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.6"/>
+<text x="448" y="312" class="h">WEB APP · NEXTAUTH</text>
+<text x="448" y="328" class="m">session cookie</text>
+
+<rect x="236" y="262" width="160" height="44" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.4"/>
+<text x="248" y="278">RETRY + 429</text>
+<text x="248" y="294" class="m">retryAfterMs</text>
+
+<rect x="16" y="262" width="150" height="44" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.4"/>
+<text x="28" y="278">HEALTH PROBES</text>
+<text x="28" y="294" class="m">live · ready</text>
+
+<rect x="16" y="200" width="70" height="40" fill="none" stroke="#36d4be" stroke-opacity="0.8"/>
+<text x="24" y="217" class="k">30 S</text>
+<text x="24" y="231" class="m">CHUNK</text>
+<rect x="96" y="200" width="70" height="40" fill="none" stroke="#36d4be" stroke-opacity="0.8"/>
+<text x="104" y="217" class="k">95%+</text>
+<text x="104" y="231" class="m">RELIABLE</text>
+
+<path d="M166 120H234" fill="none" stroke="#36d4be" stroke-width="1" marker-end="url(#ah)"/>
+<text x="176" y="110" class="m">JWT</text>
+<path d="M396 120H434" fill="none" stroke="#36d4be" stroke-width="1" marker-end="url(#ah)"/>
+<text x="402" y="112" class="m">TEXT</text>
+<path d="M396 150H416V240H434" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" marker-end="url(#aw)"/>
+<text x="320" y="190" class="m">APPEND CHUNK</text>
+<path d="M530 296V282" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1" marker-end="url(#aw)"/>
+</svg>

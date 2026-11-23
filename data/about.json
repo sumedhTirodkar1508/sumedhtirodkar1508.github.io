@@ -1,0 +1,32 @@
+{
+  "paragraphs": [
+    "I build full stack web applications across the whole SDLC, from RESTful APIs and microservices to responsive React and Next.js interfaces and the databases behind them.",
+    "I also automate delivery with GitHub Actions and AWS, and I mentor students in Java, Python and object-oriented design."
+  ],
+  "highlights": [
+    {
+      "label": "Focus",
+      "value": "Full stack web applications"
+    },
+    {
+      "label": "Core stack",
+      "value": "Java, Spring Boot, Next.js, TypeScript"
+    },
+    {
+      "label": "Current",
+      "value": "Research Assistant, Univ. of Maryland"
+    },
+    {
+      "label": "Experience",
+      "value": "5+ years"
+    },
+    {
+      "label": "Base",
+      "value": "College Park, MD"
+    },
+    {
+      "label": "Degree",
+      "value": "MS Information Technology"
+    }
+  ]
+}

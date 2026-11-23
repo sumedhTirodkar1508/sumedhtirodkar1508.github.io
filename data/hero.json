@@ -1,0 +1,51 @@
+{
+  "name": "Sumedh Tirodkar",
+  "title": "Full Stack Software Engineer | Java, Spring Boot, Next.js",
+  "summary": "Full stack engineer with 5+ years of experience building scalable web applications with Java, Spring Boot, React, Next.js and TypeScript. Built a tax filing platform for 20,000+ users and now cuts API query times and release effort as a Research Assistant at the University of Maryland.",
+  "location": "College Park, MD",
+  "photo": {
+    "src": "assets/images/sumedh-tirodkar.jpg",
+    "alt": "Portrait of Sumedh Tirodkar"
+  },
+  "readouts": [
+    {
+      "value": "20,000+",
+      "label": "users on Jio's Tax Filing Portal"
+    },
+    {
+      "value": "1M+",
+      "label": "user records protected with Row-Level Security"
+    },
+    {
+      "value": "65%",
+      "label": "faster average API query time"
+    },
+    {
+      "value": "30 → 4 min",
+      "label": "release time after CI/CD automation"
+    }
+  ],
+  "ctas": [
+    {
+      "label": "View projects",
+      "href": "#projects",
+      "kind": "primary"
+    },
+    {
+      "label": "Résumé",
+      "href": "assets/files/sumedh-tirodkar-resume.pdf",
+      "kind": "resume"
+    },
+    {
+      "label": "Get in touch",
+      "href": "#contact",
+      "kind": "secondary"
+    }
+  ],
+  "social": {
+    "github": "https://github.com/sumedhTirodkar1508",
+    "linkedin": "https://www.linkedin.com/in/sumedh-tirodkar/",
+    "email": "sumedhtirodkar15@gmail.com",
+    "phone": "+1 (240) 351-8870"
+  }
+}

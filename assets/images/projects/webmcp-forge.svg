@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" letter-spacing="0.54">
+  <title>PN-03 WebMCP Forge schematic</title>
+  <desc>Builder app scans and maps a portfolio at setup, publishes one config and one script tag; the portfolio runtime registers WebMCP tools from the live DOM, with no network calls at invocation.</desc>
+  <defs>
+    <pattern id="minor" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0V16" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <pattern id="major" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <marker id="ah" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L6 3L0 6z" fill="#36d4be"/>
+    </marker>
+    <marker id="aw" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L6 3L0 6z" fill="#ffffff" fill-opacity="0.6"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="640" height="360" fill="#0f1418"/>
+  <rect x="0" y="0" width="640" height="360" fill="url(#minor)"/>
+  <rect x="0" y="0" width="640" height="360" fill="url(#major)"/>
+
+  <!-- title strip -->
+  <rect x="16" y="16" width="608" height="24" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="26" y="32" font-size="10" fill="#ffffff">PN-03 · WEBMCP FORGE · BUILDER TO LIVE DOM RUNTIME</text>
+
+  <!-- builder column -->
+  <rect x="16" y="56" width="216" height="146" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+  <text x="26" y="72" font-size="9" fill="#ffffff">BUILDER · NEXT.JS</text>
+  <rect x="28" y="84" width="196" height="28" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="36" y="101" font-size="9" fill="#ffffff">SCANNER · CHEERIO</text>
+  <rect x="28" y="120" width="196" height="28" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="36" y="137" font-size="9" fill="#ffffff">GEMINI · SETUP ONLY</text>
+  <rect x="28" y="156" width="196" height="28" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="36" y="173" font-size="9" fill="#ffffff">POSTGRES · PRISMA</text>
+
+  <!-- published config -->
+  <rect x="272" y="100" width="96" height="60" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+  <text x="280" y="118" font-size="9" fill="#ffffff">PUBLISHED</text>
+  <text x="280" y="132" font-size="9" fill="#ffffff">CONFIG</text>
+  <text x="280" y="150" font-size="9" fill="#ffffff" fill-opacity="0.7">READ-ONLY</text>
+
+  <!-- portfolio column -->
+  <rect x="408" y="56" width="216" height="166" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+  <text x="418" y="72" font-size="9" fill="#ffffff">PORTFOLIO SITE</text>
+  <rect x="424" y="84" width="184" height="28" fill="none" stroke="#36d4be" stroke-width="1"/>
+  <text x="432" y="101" font-size="9" fill="#36d4be">SCRIPT TAG · ONE LINE</text>
+  <rect x="424" y="120" width="184" height="28" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="432" y="137" font-size="9" fill="#ffffff">RUNTIME · LIVE DOM READ</text>
+  <rect x="424" y="156" width="184" height="52" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="432" y="173" font-size="9" fill="#ffffff">WEBMCP TOOLS</text>
+  <text x="432" y="191" font-size="9" fill="#ffffff" fill-opacity="0.7">list_projects · get_profile</text>
+
+  <!-- browser agent -->
+  <rect x="408" y="250" width="216" height="40" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+  <text x="418" y="268" font-size="9" fill="#ffffff">BROWSER AGENT · WEBMCP</text>
+  <text x="418" y="282" font-size="8" fill="#ffffff" fill-opacity="0.7">INVOKES TOOLS</text>
+
+  <!-- key path arrows -->
+  <line x1="232" y1="130" x2="270" y2="130" stroke="#36d4be" stroke-width="1" marker-end="url(#ah)"/>
+  <line x1="369" y1="130" x2="406" y2="130" stroke="#36d4be" stroke-width="1" marker-end="url(#ah)"/>
+  <line x1="520" y1="248" x2="520" y2="224" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#aw)"/>
+  <text x="528" y="240" font-size="8" fill="#ffffff" fill-opacity="0.7">NO NETWORK</text>
+
+  <!-- readouts -->
+  <rect x="16" y="250" width="116" height="56" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="26" y="282" font-size="20" fill="#36d4be">10</text>
+  <text x="26" y="298" font-size="8" fill="#ffffff" fill-opacity="0.7">SCANNED PAGES</text>
+  <rect x="140" y="250" width="116" height="56" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="150" y="282" font-size="20" fill="#36d4be">1</text>
+  <text x="150" y="298" font-size="8" fill="#ffffff" fill-opacity="0.7">SCRIPT TAG</text>
+  <rect x="264" y="250" width="116" height="56" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="274" y="282" font-size="20" fill="#36d4be">0</text>
+  <text x="274" y="298" font-size="8" fill="#ffffff" fill-opacity="0.7">NETWORK / INVOKE</text>
+
+  <text x="16" y="336" font-size="9" fill="#ffffff" fill-opacity="0.7">SETUP: SCAN + MAP AT BUILD TIME · RUNTIME: LIVE DOM, NO GEMINI CALLS</text>
+</svg>

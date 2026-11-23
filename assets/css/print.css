@@ -1,0 +1,123 @@
+/* Evergreen Executive in print: the portfolio prints as an ink-friendly résumé document.
+   Loaded with media="print". */
+* {
+  background: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  animation: none !important;
+  transition: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  /* records the reveal never reached (never scrolled into view) still print */
+  opacity: 1 !important;
+  transform: none !important;
+  backdrop-filter: none !important;
+}
+section,
+article {
+  content-visibility: visible !important;
+  contain: none !important;
+}
+nav,
+button,
+canvas,
+.skip-link,
+.navbar,
+.hero-visual,
+.back-to-top,
+.hero-social,
+[class*='cta'],
+[aria-hidden='true'] {
+  display: none !important;
+}
+body {
+  font-size: 11pt !important;
+  line-height: 1.45 !important;
+}
+main,
+section,
+.band {
+  padding: 0 0 12pt !important;
+  margin: 0 !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  border: 0 !important;
+}
+.hero-layout,
+.about-layout,
+.contact-layout,
+.credentials,
+.project-feature,
+.tl-item {
+  display: block !important;
+}
+.timeline::before,
+.hero::before,
+.contact-section::before {
+  display: none !important;
+}
+h1 {
+  font-size: 22pt !important;
+  margin: 0 0 6pt !important;
+}
+h2 {
+  font-size: 14pt !important;
+  margin: 14pt 0 6pt !important;
+}
+h3 {
+  font-size: 12pt !important;
+}
+h1,
+h2,
+h3 {
+  page-break-after: avoid;
+}
+article,
+li,
+.fact,
+.skill-category {
+  break-inside: avoid;
+}
+.tl-card,
+.project-card,
+.project-feature,
+.skill-category,
+.edu-card,
+.cert-list,
+.about-facts,
+.kit-contact,
+.kit-readout {
+  border: 1px solid #cccccc !important;
+  padding: 8pt !important;
+  margin: 0 0 8pt !important;
+}
+a {
+  text-decoration: none !important;
+}
+main a[href^='http']::after {
+  content: ' (' attr(href) ')';
+  font-size: 8pt;
+  color: #555555 !important;
+  word-break: break-all;
+}
+/* a contact row already shows its address; the icon-only social circles are left out above */
+main .kit-contact::after {
+  content: none !important;
+}
+/* with motion on, the hero title's visible copy is the aria-hidden typed line: print the real
+   title, which main.js keeps in the visually hidden span */
+.hero-title {
+  min-height: 0 !important;
+}
+.hero-title .sr-only {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  clip-path: none !important;
+  white-space: normal !important;
+}
+img,
+svg {
+  max-height: 2in;
+}

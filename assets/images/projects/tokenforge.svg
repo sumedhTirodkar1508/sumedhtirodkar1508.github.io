@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+<title>PN-07 tokenforge schematic</title>
+<desc>One tokens.json is validated by Zod, then emitted as a Tailwind theme, CSS custom properties and a typed TS module. A contrast gate fails CI on bad pairs. A diff command reports drift. Readouts: 104 tests, 3 outputs.</desc>
+<style>
+.t{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;font-size:10px;letter-spacing:0.06em;fill:#fff}
+.l{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;font-size:11px;letter-spacing:0.06em;fill:#fff}
+.s{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;font-size:9px;letter-spacing:0.06em;fill:#fff;fill-opacity:.7}
+.b{fill:#0f1418;stroke:#fff;stroke-opacity:.6;stroke-width:1}
+.a{fill:#0f1418;stroke:#36d4be;stroke-width:1}
+.w{fill:none;stroke:#fff;stroke-opacity:.6;stroke-width:1}
+.k{fill:none;stroke:#36d4be;stroke-width:1}
+.d{fill:none;stroke:#fff;stroke-opacity:.6;stroke-width:1;stroke-dasharray:3 3}
+.ac{fill:#36d4be}
+</style>
+<defs>
+<pattern id="g" width="16" height="16" patternUnits="userSpaceOnUse">
+<path d="M16 0H0V16" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="1"/>
+</pattern>
+<pattern id="G" width="80" height="80" patternUnits="userSpaceOnUse">
+<path d="M80 0H0V80" fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="1"/>
+</pattern>
+<marker id="m" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+<path d="M0 0L6 3L0 6z" fill="#fff" fill-opacity=".7"/>
+</marker>
+<marker id="ma" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+<path d="M0 0L6 3L0 6z" fill="#36d4be"/>
+</marker>
+</defs>
+
+<rect width="640" height="360" fill="#0f1418"/>
+<rect width="640" height="360" fill="url(#g)"/>
+<rect width="640" height="360" fill="url(#G)"/>
+
+<rect x="16" y="16" width="608" height="24" class="w"/>
+<text x="28" y="32" class="t">PN-07 · TOKENFORGE · ONE TOKEN SOURCE, THREE OUTPUTS, WCAG GATE</text>
+
+<rect x="32" y="110" width="120" height="56" class="b"/>
+<text x="92" y="133" class="l" text-anchor="middle">tokens.json</text>
+<text x="92" y="150" class="s" text-anchor="middle">SINGLE SOURCE</text>
+
+<rect x="196" y="110" width="120" height="56" class="a"/>
+<text x="256" y="133" class="l" text-anchor="middle" style="fill:#36d4be">ZOD VALIDATE</text>
+<text x="256" y="150" class="s" text-anchor="middle">schema + refs</text>
+
+<rect x="380" y="64" width="160" height="44" class="b"/>
+<text x="460" y="84" class="l" text-anchor="middle">TAILWIND THEME</text>
+<text x="460" y="99" class="s" text-anchor="middle">theme extension</text>
+
+<rect x="380" y="124" width="160" height="44" class="b"/>
+<text x="460" y="144" class="l" text-anchor="middle">CSS CUSTOM PROPS</text>
+<text x="460" y="159" class="s" text-anchor="middle">light / dark / hc</text>
+
+<rect x="380" y="184" width="160" height="44" class="b"/>
+<text x="460" y="204" class="l" text-anchor="middle">TYPED TS MODULE</text>
+<text x="460" y="219" class="s" text-anchor="middle">as const + types</text>
+
+<path d="M316 138H348V86H380" class="k" marker-end="url(#ma)"/>
+<path d="M316 138H380" class="k" marker-end="url(#ma)"/>
+<path d="M348 138V206H380" class="k" marker-end="url(#ma)"/>
+
+<rect x="196" y="200" width="120" height="52" class="b"/>
+<text x="256" y="222" class="l" text-anchor="middle">CONTRAST GATE</text>
+<text x="256" y="237" class="s" text-anchor="middle">check-contrast</text>
+<path d="M256 166V200" class="w" marker-end="url(#m)"/>
+
+<rect x="32" y="200" width="120" height="52" class="b"/>
+<text x="92" y="222" class="l" text-anchor="middle">DRIFT DIFF</text>
+<text x="92" y="237" class="s" text-anchor="middle">two token docs</text>
+<path d="M92 166V200" class="d" marker-end="url(#m)"/>
+
+<path d="M316 226H348V278H380" class="w" marker-end="url(#m)"/>
+<rect x="380" y="256" width="160" height="44" class="b"/>
+<text x="460" y="276" class="l" text-anchor="middle">CI EXIT</text>
+<text x="460" y="291" class="s" text-anchor="middle">non-zero on fail</text>
+
+<rect x="32" y="300" width="120" height="36" class="a"/>
+<text x="92" y="322" class="l" text-anchor="middle"><tspan class="ac">104</tspan> TESTS</text>
+<rect x="196" y="300" width="120" height="36" class="a"/>
+<text x="256" y="322" class="l" text-anchor="middle"><tspan class="ac">3</tspan> OUTPUTS</text>
+</svg>

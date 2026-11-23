@@ -1,0 +1,88 @@
+{
+  "groups": [
+    {
+      "name": "Languages",
+      "items": [
+        "Java",
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "SQL"
+      ]
+    },
+    {
+      "name": "Frontend",
+      "items": [
+        "React.js",
+        "Next.js",
+        "HTML5",
+        "CSS3",
+        "Responsive UI"
+      ]
+    },
+    {
+      "name": "Backend",
+      "items": [
+        "Spring Boot",
+        "Spring MVC",
+        "Node.js",
+        "Express.js",
+        "REST APIs",
+        "Microservices"
+      ]
+    },
+    {
+      "name": "Databases",
+      "items": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Supabase",
+        "Prisma ORM"
+      ]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "items": [
+        "AWS",
+        "Amazon S3",
+        "CloudFront",
+        "Docker",
+        "Kubernetes",
+        "GitHub Actions",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "APIs, Messaging & Security",
+      "items": [
+        "Apache Kafka",
+        "RabbitMQ",
+        "OAuth 2.0",
+        "JWT",
+        "API Gateway"
+      ]
+    },
+    {
+      "name": "Testing",
+      "items": [
+        "JUnit",
+        "PyTest",
+        "Jest",
+        "Playwright",
+        "Integration Testing"
+      ]
+    },
+    {
+      "name": "Architecture & Practices",
+      "items": [
+        "System Design",
+        "Distributed Systems",
+        "Event-Driven Architecture",
+        "SOLID Principles",
+        "Design Patterns",
+        "Agile"
+      ]
+    }
+  ]
+}
