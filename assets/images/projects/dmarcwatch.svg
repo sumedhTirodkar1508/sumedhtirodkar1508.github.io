@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
-  <title>PN-06 dmarcwatch pipeline schematic</title>
+  <title>PN-11 dmarcwatch pipeline schematic</title>
   <desc>RUA XML reports pass through an XML reader and a tolerant parser, then analysis, feeding a console report and a browser app. The pass rate drops from 100.0% to 15.0%.</desc>
   <defs>
     <pattern id="minor" width="16" height="16" patternUnits="userSpaceOnUse">
@@ -22,7 +22,7 @@
 
   <rect x="0" y="0" width="640" height="28" fill="#ffffff" fill-opacity="0.06"/>
   <line x1="0" y1="28" x2="640" y2="28" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1"/>
-  <text x="16" y="18" font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" font-size="10" letter-spacing="0.06em" fill="#ffffff">PN-06 · DMARCWATCH · RUA DELIVERABILITY SCHEMATIC</text>
+  <text x="16" y="18" font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" font-size="10" letter-spacing="0.06em" fill="#ffffff">PN-11 · DMARCWATCH · RUA DELIVERABILITY SCHEMATIC</text>
 
   <g font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" letter-spacing="0.06em" fill="#ffffff" font-size="9">
     <rect x="16" y="66" width="120" height="44" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>

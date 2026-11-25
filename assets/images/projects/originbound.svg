@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
-<title>PN-09 originbound: same relay, two relying parties</title>
+<title>PN-14 originbound: same relay, two relying parties</title>
 <desc>A victim passes values through a relay to a TOTP relying party (accepts) and a WebAuthn relying party (ORIGIN_MISMATCH on clientDataJSON.origin), with a numbered trace.</desc>
 <defs>
 <pattern id="minor" width="16" height="16" patternUnits="userSpaceOnUse">
@@ -27,7 +27,7 @@ text{font-family:"IBM Plex Mono, SFMono-Regular, Consolas, monospace";letter-spa
 <rect x="0" y="0" width="640" height="360" fill="url(#major)"/>
 
 <rect x="16" y="16" width="608" height="28" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
-<text class="l" x="28" y="34">PN-09 · ORIGINBOUND · SAME RELAY, TWO RELYING PARTIES</text>
+<text class="l" x="28" y="34">PN-14 · ORIGINBOUND · SAME RELAY, TWO RELYING PARTIES</text>
 
 <rect x="32" y="120" width="120" height="60" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1"/>
 <text class="l" x="44" y="140">VICTIM</text>

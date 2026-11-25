@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
-  <title>PN-04 onespec schematic</title>
+  <title>PN-09 onespec schematic</title>
   <desc>One spec feeds a client validator, a server validator and a SQL CHECK. A seeded adversarial row generator sends the same rows to all three, and a parity test compares accept and reject.</desc>
   <defs>
     <pattern id="minor" width="16" height="16" patternUnits="userSpaceOnUse">
@@ -21,7 +21,7 @@
   <rect x="0" y="0" width="640" height="360" fill="url(#major)"/>
 
   <rect x="0" y="0" width="640" height="28" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
-  <text x="16" y="18" font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" font-size="10" letter-spacing="0.6" fill="#ffffff">PN-04 · ONESPEC · ONE SPEC, THREE ENFORCEMENT POINTS</text>
+  <text x="16" y="18" font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" font-size="10" letter-spacing="0.6" fill="#ffffff">PN-09 · ONESPEC · ONE SPEC, THREE ENFORCEMENT POINTS</text>
 
   <g font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" letter-spacing="0.6">
     <!-- generator -->

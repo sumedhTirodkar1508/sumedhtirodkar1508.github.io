@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+  <title>PN-05 AI-SOC service schematic</title>
+  <desc>Wazuh-format alerts enter a webhook receiver, then LLM triage on local Ollama grounded by a RAG service over MITRE ATT&amp;CK, and ML flow classification. Correlation groups alerts into incidents for analyst review on the dashboard, which drives Sigma rule export and dry-run response plans.</desc>
+  <defs>
+    <pattern id="minor" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0 L0 0 L0 16" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <pattern id="major" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0 L0 0 L0 80" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#ffffff" fill-opacity="0.7"/>
+    </marker>
+    <marker id="ahA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#36d4be"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="640" height="360" fill="#0f1418"/>
+  <rect x="0" y="0" width="640" height="360" fill="url(#minor)"/>
+  <rect x="0" y="0" width="640" height="360" fill="url(#major)"/>
+
+  <rect x="0" y="0" width="640" height="28" fill="#ffffff" fill-opacity="0.06"/>
+  <line x1="0" y1="28" x2="640" y2="28" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="16" y="18" font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" font-size="10" letter-spacing="0.06em" fill="#ffffff">PN-05 · AI-SOC · LLM + ML SECURITY OPERATIONS</text>
+
+  <g font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" letter-spacing="0.06em" fill="#ffffff" font-size="9">
+    <rect x="16" y="50" width="120" height="60" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="26" y="70">INPUT</text>
+    <text x="26" y="84">WAZUH ALERTS</text>
+    <text x="26" y="98" fill-opacity="0.7">FLOW RECORDS</text>
+
+    <rect x="172" y="50" width="120" height="60" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="182" y="70">RECEIVER :8002</text>
+    <text x="182" y="84">WEBHOOK</text>
+    <text x="182" y="98" fill-opacity="0.7">DURABLE QUEUE</text>
+
+    <rect x="328" y="50" width="120" height="60" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="338" y="70">TRIAGE :8100</text>
+    <text x="338" y="84">LOCAL OLLAMA LLM</text>
+    <text x="338" y="98" fill-opacity="0.7">SEVERITY + MITRE</text>
+
+    <rect x="484" y="50" width="120" height="60" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="494" y="70">RAG :8300</text>
+    <text x="494" y="84">CHROMA · ONNX</text>
+    <text x="494" y="98" fill-opacity="0.7">ATT&amp;CK + RUNBOOKS</text>
+
+    <rect x="172" y="140" width="120" height="60" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="182" y="160">ML :8500</text>
+    <text x="182" y="174">FLOW CLASSIFIER</text>
+    <text x="182" y="188" fill-opacity="0.7">RF · XGBOOST · DT</text>
+
+    <rect x="328" y="140" width="120" height="60" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="338" y="160">CORRELATION</text>
+    <text x="338" y="174">INCIDENTS</text>
+    <text x="338" y="188" fill-opacity="0.7">IDEMPOTENT :8600</text>
+
+    <rect x="484" y="140" width="120" height="60" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="494" y="160">DASHBOARD :5050</text>
+    <text x="494" y="174">ANALYST REVIEW</text>
+    <text x="494" y="188" fill-opacity="0.7">4 ROLES · CSRF</text>
+
+    <rect x="328" y="234" width="120" height="50" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="338" y="252">RULES :8700</text>
+    <text x="338" y="266" fill-opacity="0.7">SIGMA YAML EXPORT</text>
+
+    <rect x="484" y="234" width="120" height="50" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="494" y="252">RESPONSE :8800</text>
+    <text x="494" y="266" fill-opacity="0.7">DRY RUN · ROLLBACK</text>
+
+    <rect x="16" y="234" width="130" height="50" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="26" y="250" fill-opacity="0.7">OFFLINE TESTS</text>
+    <text x="26" y="270" font-size="11" fill="#36d4be">193 PASSED</text>
+
+    <rect x="170" y="234" width="130" height="50" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="180" y="250" fill-opacity="0.7">P95 INFERENCE</text>
+    <text x="180" y="270" font-size="11" fill="#36d4be">378 MS</text>
+
+    <text x="16" y="332" fill-opacity="0.7">CICIDS2017 · 15 CLASSES · SIGNED MODEL BUNDLES · DOCKER COMPOSE</text>
+  </g>
+
+  <g stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" fill="none">
+    <line x1="136" y1="80" x2="171" y2="80" marker-end="url(#ah)"/>
+    <line x1="448" y1="76" x2="483" y2="76" marker-end="url(#ah)"/>
+    <line x1="483" y1="88" x2="449" y2="88" marker-end="url(#ah)"/>
+    <polyline points="520,200 520,217 388,217 388,233" marker-end="url(#ah)"/>
+    <line x1="560" y1="200" x2="560" y2="233" marker-end="url(#ah)"/>
+  </g>
+  <g stroke="#36d4be" stroke-width="1" fill="none">
+    <line x1="292" y1="80" x2="327" y2="80" marker-end="url(#ahA)"/>
+    <line x1="232" y1="110" x2="232" y2="139" marker-end="url(#ahA)"/>
+    <line x1="388" y1="110" x2="388" y2="139" marker-end="url(#ahA)"/>
+    <line x1="292" y1="170" x2="327" y2="170" marker-end="url(#ahA)"/>
+    <line x1="448" y1="170" x2="483" y2="170" marker-end="url(#ahA)"/>
+  </g>
+</svg>

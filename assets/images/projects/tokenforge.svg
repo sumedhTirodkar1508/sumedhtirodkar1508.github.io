@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
-<title>PN-07 tokenforge schematic</title>
+<title>PN-12 tokenforge schematic</title>
 <desc>One tokens.json is validated by Zod, then emitted as a Tailwind theme, CSS custom properties and a typed TS module. A contrast gate fails CI on bad pairs. A diff command reports drift. Readouts: 104 tests, 3 outputs.</desc>
 <style>
 .t{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;font-size:10px;letter-spacing:0.06em;fill:#fff}
@@ -32,7 +32,7 @@
 <rect width="640" height="360" fill="url(#G)"/>
 
 <rect x="16" y="16" width="608" height="24" class="w"/>
-<text x="28" y="32" class="t">PN-07 · TOKENFORGE · ONE TOKEN SOURCE, THREE OUTPUTS, WCAG GATE</text>
+<text x="28" y="32" class="t">PN-12 · TOKENFORGE · ONE TOKEN SOURCE, THREE OUTPUTS, WCAG GATE</text>
 
 <rect x="32" y="110" width="120" height="56" class="b"/>
 <text x="92" y="133" class="l" text-anchor="middle">tokens.json</text>

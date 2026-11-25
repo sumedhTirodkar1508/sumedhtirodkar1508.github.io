@@ -88,6 +88,114 @@
       }
     },
     {
+      "name": "driftguard",
+      "category": "AI / MLOps",
+      "description": "An end-to-end ML lifecycle that watches itself: train, track and register in MLflow, serve with FastAPI, detect drift and retrain automatically. It is demonstrated on a real distribution shift and evaluated on held-out data.",
+      "highlights": [
+        "Caught concept drift (prediction PSI 0.223) that feature monitoring missed, then retrained and promoted v2, cutting held-out MAE by 44.6%.",
+        "Scores both models only on a held-out 2012 slice neither was trained on, so the gain is real generalization.",
+        "39 tests against a real MLflow registry, with lint, type checks and a Docker build in CI."
+      ],
+      "technologies": [
+        "Python",
+        "scikit-learn",
+        "MLflow",
+        "FastAPI",
+        "SciPy",
+        "Docker"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/driftguard"
+      },
+      "image": "assets/images/projects/driftguard.svg"
+    },
+    {
+      "name": "AI-SOC",
+      "category": "AI / Security operations",
+      "description": "A local AI-augmented security operations center. Wazuh-format alerts are triaged by a local LLM grounded in MITRE ATT&CK, network flows are classified by ML models, and analysts review correlated incidents before any rule export or response.",
+      "highlights": [
+        "LLM triage on local Ollama with retrieval over ATT&CK and runbooks, plus Random Forest, XGBoost and decision-tree flow classifiers trained on CICIDS2017.",
+        "Viewer, analyst, reviewer and admin roles; analysts cannot approve their own labels, and responses run as dry runs with rollback.",
+        "193 offline tests passed; p95 inference latency of 378 ms over 100 concurrent requests."
+      ],
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "Ollama",
+        "ChromaDB",
+        "XGBoost",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/ai_soc"
+      },
+      "image": "assets/images/projects/ai-soc.svg"
+    },
+    {
+      "name": "Email Phishing Detector",
+      "category": "AI / Security",
+      "description": "A command-line tool that analyzes .eml and .msg files for phishing. It inspects headers, body and attachments, checks indicators against VirusTotal, and can ask an AI model for a structured phishing score and verdict.",
+      "highlights": [
+        "Header, body and attachment analysis run concurrently with asyncio; VirusTotal lookups are cached in SQLite.",
+        "Parses SPF, DKIM and DMARC results and flags brand impersonation and typosquatted links with Levenshtein distance.",
+        "OCR reads text from image attachments; the AI step returns a 0–10 score, verdict and suspicious elements as JSON."
+      ],
+      "technologies": [
+        "Python",
+        "asyncio",
+        "aiohttp",
+        "SQLite",
+        "Tesseract OCR",
+        "LLM API"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/email-phishing-detection"
+      },
+      "image": "assets/images/projects/email-phishing-detection.svg"
+    },
+    {
+      "name": "Fraud Detection",
+      "category": "Machine learning",
+      "description": "Classifies financial transactions as fraudulent or legitimate using 594,643 synthetic BankSim payments, of which 7,200 are fraud. Five classifiers are compared on precision, recall and the real cost of false positives and negatives.",
+      "highlights": [
+        "Cleaned and retyped every column, dropped single-value ZIP fields and one-hot encoded the categorical features.",
+        "Compared Naive Bayes, logistic regression, a neural network, a decision tree and a random forest.",
+        "Naive Bayes reached 0.9993 recall and the decision tree 0.9027 precision on a 1.2% fraud class."
+      ],
+      "technologies": [
+        "Python",
+        "pandas",
+        "scikit-learn",
+        "Jupyter"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/fraud-detection-in-python"
+      },
+      "image": "assets/images/projects/fraud-detection.svg"
+    },
+    {
+      "name": "NLP Text Analysis",
+      "category": "AI / NLP",
+      "description": "A Streamlit app that analyzes typed text or uploaded PDF, DOCX and TXT files. It extracts tokens, parts of speech, lemmas and named entities with spaCy, scores sentiment with TextBlob and draws a word cloud.",
+      "highlights": [
+        "Two modes: a text analysis dashboard and file-based analysis for PDF, DOCX and TXT.",
+        "Token table with shape, part of speech, lemma and stop-word flags, downloadable as CSV.",
+        "Most common tokens, named entities, sentiment and a word cloud in one view."
+      ],
+      "technologies": [
+        "Python",
+        "spaCy",
+        "TextBlob",
+        "Streamlit",
+        "pandas"
+      ],
+      "links": {
+        "source": "https://github.com/sumedhTirodkar1508/text-analysis-using-nlp-streamlit"
+      },
+      "image": "assets/images/projects/text-analysis-nlp.svg"
+    },
+    {
       "name": "onespec",
       "category": "Validation / Data integrity",
       "description": "One declarative spec drives a compiled client validator, an interpreted server validator and SQL CHECK constraints. A property-based parity suite proves all three accept and reject exactly the same rows.",

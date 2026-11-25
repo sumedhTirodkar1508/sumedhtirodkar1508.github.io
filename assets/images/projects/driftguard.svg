@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+  <title>PN-04 driftguard ML lifecycle schematic</title>
+  <desc>Bike-share data trains a pipeline that is tracked and registered in MLflow and served by FastAPI. A monitor compares predictions with observed outcomes; when prediction PSI exceeds 0.2 it retrains, registers and promotes a new version. Held-out MAE falls from 87.31 to 48.35.</desc>
+  <defs>
+    <pattern id="minor" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0 L0 0 L0 16" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <pattern id="major" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0 L0 0 L0 80" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#ffffff" fill-opacity="0.7"/>
+    </marker>
+    <marker id="ahA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#36d4be"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="640" height="360" fill="#0f1418"/>
+  <rect x="0" y="0" width="640" height="360" fill="url(#minor)"/>
+  <rect x="0" y="0" width="640" height="360" fill="url(#major)"/>
+
+  <rect x="0" y="0" width="640" height="28" fill="#ffffff" fill-opacity="0.06"/>
+  <line x1="0" y1="28" x2="640" y2="28" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="16" y="18" font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" font-size="10" letter-spacing="0.06em" fill="#ffffff">PN-04 · DRIFTGUARD · SELF-MONITORING ML LIFECYCLE</text>
+
+  <g font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" letter-spacing="0.06em" fill="#ffffff" font-size="9">
+    <rect x="16" y="56" width="120" height="60" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="26" y="76">DATA.PY</text>
+    <text x="26" y="90">BIKE-SHARE DEMAND</text>
+    <text x="26" y="104" fill-opacity="0.7">2011 / 2012 SPLIT</text>
+
+    <rect x="172" y="56" width="120" height="60" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="182" y="76">TRAIN</text>
+    <text x="182" y="90">SKLEARN PIPELINE</text>
+    <text x="182" y="104" fill-opacity="0.7">PARAMS + METRICS</text>
+
+    <rect x="328" y="56" width="120" height="60" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="338" y="76">MODEL.PY</text>
+    <text x="338" y="90">MLFLOW REGISTRY</text>
+    <text x="338" y="104" fill-opacity="0.7">@PRODUCTION ALIAS</text>
+
+    <rect x="484" y="56" width="120" height="60" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="494" y="76">SERVING.PY</text>
+    <text x="494" y="90">FASTAPI</text>
+    <text x="494" y="104" fill-opacity="0.7">/PREDICT /RELOAD</text>
+
+    <rect x="484" y="150" width="120" height="60" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="494" y="170">DRIFT.PY</text>
+    <text x="494" y="184">PSI + KS TESTS</text>
+    <text x="494" y="198" fill-opacity="0.7">PREDS VS ACTUALS</text>
+
+    <rect x="328" y="150" width="120" height="60" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="338" y="170">MONITOR.PY</text>
+    <text x="338" y="184">PSI &gt; 0.2 ?</text>
+    <text x="338" y="198" fill-opacity="0.7">RETRAIN TRIGGER</text>
+
+    <rect x="172" y="150" width="120" height="60" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="182" y="170">RETRAIN</text>
+    <text x="182" y="184">REGISTER V2</text>
+    <text x="182" y="198" fill-opacity="0.7">PROMOTE + HOT-SWAP</text>
+
+    <rect x="16" y="244" width="130" height="50" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="26" y="260" fill-opacity="0.7">HELD-OUT MAE · V1</text>
+    <text x="26" y="280" font-size="11" fill="#36d4be">87.31</text>
+
+    <rect x="170" y="244" width="130" height="50" fill="#0f1418" stroke="#36d4be" stroke-width="1"/>
+    <text x="180" y="260" fill-opacity="0.7">HELD-OUT MAE · V2</text>
+    <text x="180" y="280" font-size="11" fill="#36d4be">48.35</text>
+
+    <rect x="328" y="244" width="120" height="50" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="338" y="260" fill-opacity="0.7">PREDICTION PSI</text>
+    <text x="338" y="280" font-size="11" fill="#36d4be">0.223 → 0.067</text>
+
+    <rect x="484" y="244" width="120" height="50" fill="#0f1418" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="494" y="260" fill-opacity="0.7">TESTS · CI</text>
+    <text x="494" y="280" font-size="11" fill="#36d4be">39 + DOCKER</text>
+
+    <text x="16" y="332" fill-opacity="0.7">CONCEPT DRIFT · HELD-OUT 2012 EVALUATION · 44.6% MAE REDUCTION</text>
+  </g>
+
+  <g stroke="#ffffff" stroke-opacity="0.6" stroke-width="1" fill="none">
+    <line x1="136" y1="86" x2="171" y2="86" marker-end="url(#ah)"/>
+  </g>
+  <g stroke="#36d4be" stroke-width="1" fill="none">
+    <line x1="292" y1="86" x2="327" y2="86" marker-end="url(#ahA)"/>
+    <line x1="448" y1="86" x2="483" y2="86" marker-end="url(#ahA)"/>
+    <line x1="544" y1="116" x2="544" y2="149" marker-end="url(#ahA)"/>
+    <line x1="484" y1="180" x2="449" y2="180" marker-end="url(#ahA)"/>
+    <line x1="328" y1="180" x2="293" y2="180" marker-end="url(#ahA)"/>
+    <line x1="232" y1="150" x2="232" y2="117" marker-end="url(#ahA)"/>
+    <line x1="146" y1="269" x2="169" y2="269" marker-end="url(#ahA)"/>
+  </g>
+</svg>
